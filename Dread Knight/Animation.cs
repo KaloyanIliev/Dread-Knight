@@ -5,6 +5,8 @@ namespace Dread_Knight
 {
     class Animation
     {
+        static ConsoleKeyInfo pressedKey = new ConsoleKeyInfo();
+
         struct Object
         {
             public int x;
@@ -54,7 +56,7 @@ namespace Dread_Knight
       |           |    | |   | |     |           |                         |           |                
       |           |    | |   | |     |           |                         |           |                
 `^^^^^^^^^^^`^^^^`^^^`^^^^^^^^^^^^`^`^`^^^^^`^^^^^^^^^`^^^^^^^^^`^^^^^^^^^`^^^^`^^^`^^^^^^^`^^^^`^^^`^^^^^^^^`^^^^`^^^`^^^^
-");
+Press any key to cancle the animation");
                                                 /* New logo - even uglier :) */
             Console.ForegroundColor = ConsoleColor.Green;
             Console.SetCursorPosition(25, 20);
@@ -86,12 +88,23 @@ namespace Dread_Knight
 
             while (dreadNight.x > 24)
             {
-                Console.Clear();
-                Console.ForegroundColor = ConsoleColor.Yellow;
-                Castle();
-                PrintOnPosition(dreadNight.x, dreadNight.y, dreadNight.s, dreadNight.color);
-                dreadNight.x = dreadNight.x - 8;
-                Thread.Sleep(500);
+                if (!Console.KeyAvailable)
+                {
+                    Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Castle();
+                    PrintOnPosition(dreadNight.x, dreadNight.y, dreadNight.s, dreadNight.color);
+                    dreadNight.x = dreadNight.x - 8;
+                    Thread.Sleep(500);
+                }
+                else
+                {
+                    return;
+                }
+                
+                
+              
+                
             }
         }
     }

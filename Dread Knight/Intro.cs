@@ -42,6 +42,9 @@ namespace Dread_Knight
                 Console.SetCursorPosition(53, 10);
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("   PRESS Y or N");
+                Console.SetCursorPosition(40, 12);
+                Console.ForegroundColor = ConsoleColor.Gray;
+                Console.WriteLine("(Y for \"SinglePlayer\" or N for \"MultyPlayer\")");
                 Console.SetCursorPosition(Console.WindowWidth / 2, 12);
                 pressedKey = Console.ReadKey(true);
                 isFirstTime = false;

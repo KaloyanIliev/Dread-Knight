@@ -15,7 +15,7 @@ namespace Dread_Knight
             Console.CursorVisible = false;
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.Title = "KILLING NINJAS";
-            //Animation.FirstStage();
+            Animation.FirstStage();
 
             int numberOfPlayers = Intro.Menu();
 
